@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\News>
@@ -17,11 +18,11 @@ class NewsFactory extends Factory
     public function definition(): array
     {
         return [
-            'titulo' => fake() -> name(),
-            'conteudo' => fake() -> name(),
-            'username' => fake() -> name(),
-            'created_at' => now(),
-            'upadated_at' => now()
+            'titulo' => $this->faker->text(),
+            'conteudo' => $this->faker->paragraph(),
+            'username' => $this->faker->name(),
+            'created_at' => fn() => now(),
+            'updated_at' => fn() => now()
         ];
     }
 }

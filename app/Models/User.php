@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    protected $primaryKey = 'nome';
+    protected $primaryKey = 'username';
     public $incrementing = false;
     /**
      * The attributes that are mass assignable.
