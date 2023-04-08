@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    use HasFactory; // Use o trait HasFactory
+    use HasFactory;
+
+    protected $fillable = ['titulo', 'conteudo', 'username'];
 
     public function user()
     {
         return $this->belongsTo(User::class, 'username', 'username');
     }
 }
+

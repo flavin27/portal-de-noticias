@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('conteudo');
             $table->string('username');
             $table->timestamps();
-            $table->foreign('username')->references('username')->on('users')->onDelete('cascade');
+            $table->foreign('username')->references('username')->on('users')->onDelete('cascade')->onupdate('cascade');
         });
     }
 

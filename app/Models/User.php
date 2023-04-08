@@ -10,6 +10,8 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    use HasFactory;
+    protected $fillable = ['username'];
     protected $primaryKey = 'username';
     public $incrementing = false;
     /**
@@ -17,4 +19,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    public function news() {
+        return $this->hasMany(News::class, 'username', 'username');
+    }
 }

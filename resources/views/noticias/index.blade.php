@@ -1,6 +1,6 @@
 @include('components.head')
 
-    <h1 class="text-5xl font-extrabold text-center">Lista de Notícias</h1>
+    <h1 class="text-5xl font-extrabold text-center py-4">Lista de Notícias</h1>
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 m-12">
         @foreach ($noticias as $noticia)
