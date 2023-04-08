@@ -13,4 +13,7 @@ class NewsController extends Controller
         $noticias = DB::select('SELECT * FROM news');
         return view('noticias.index', ['noticias' => $noticias]);
     }
+    public function create() {
+        
+    }
 }
