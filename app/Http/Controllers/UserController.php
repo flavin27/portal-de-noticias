@@ -8,11 +8,13 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function store(Request $request) {
-        $user = User::create($request->all());
-        $user->news()->create($request->all());
-        return redirect('noticias/create')->with('success', 'deu bom!');
+    public function store(Request $request) { // inicia a transação
 
+            $user = User::firstOrCreate(['username' => $request->username]);
+            $user->news()->create(['titulo' => $request->titulo, 'conteudo' => $request->conteudo, 'username' => $request->username]);
+
+
+        return redirect('noticias/create')->with('success', 'deu bom!');
     }
     
 }
