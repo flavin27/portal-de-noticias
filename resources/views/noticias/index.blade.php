@@ -1,5 +1,9 @@
 @include('components.head')
-
+@if (session('success'))
+    <div class="bg-red-500 text-white py-4 px-6 mb-4 rounded-md max-w-sm mx-auto my-4">
+    {{ session('success') }}
+</div>
+@endif
     <h1 class="text-5xl font-extrabold text-center py-4">Lista de Notícias</h1>
 
 
@@ -14,7 +18,13 @@
                 </div>
                 <div class="flex justify-end px-6 pb-6">
                     <button class="mr-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded">Editar</button>
-                    <button class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded">Apagar</button>
+                    <form action="{{ route('noticias.destroy', $noticia->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded" type="submit">Apagar</button>
+                    </form>
+                    
+                    
                 </div>
             </div>
         @endforeach

@@ -33,6 +33,11 @@ class NewsController extends Controller
             return redirect('noticias')->withErrors(['username' => 'O username informado é inválido.']);
         }
     }
+    public function destroy($id) {
+        $noticia = News::where('id' ,$id);
+        $noticia->delete();
+        return redirect('noticias')->with('success', 'Noticia apagada!');
+    }
     
     
 }
