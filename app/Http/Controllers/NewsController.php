@@ -34,8 +34,13 @@ class NewsController extends Controller
         }
     }
     public function destroy($id) {
-        $noticia = News::where('id' ,$id);
+        $noticia = News::where('id' ,$id)->first();
+        $usuario = $noticia->username;
         $noticia->delete();
+        if (!News::exists('username', $usuario)) {
+            $usuario = User::where('username', $usuario)->first();
+            $usuario->delete();
+        }
         return redirect('noticias')->with('success', 'Noticia apagada!');
     }
     
