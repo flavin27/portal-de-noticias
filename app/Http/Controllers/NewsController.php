@@ -43,6 +43,18 @@ class NewsController extends Controller
         }
         return redirect('noticias')->with('success', 'Noticia apagada!');
     }
+    public function edit($id) {
+        $noticia = News::where('id' ,$id)->first();
+        return view('noticias.edit')->with('noticias', $noticia);
+    }
+    public function update(Request $request, $id) {
+        $noticia = News::find($id);
+        $noticia->titulo = $request->titulo;
+        $noticia->conteudo = $request->conteudo;
+        $noticia->username = $request->username;
+        $noticia->save();
+        return redirect('noticias')->with('success', 'Noticia editada');
+    }
     
     
 }

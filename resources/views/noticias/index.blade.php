@@ -17,7 +17,7 @@
                     <p class="text-gray-600 mb-4">{{$noticia->conteudo}}</p>
                 </div>
                 <div class="flex justify-end px-6 pb-6">
-                    <button class="mr-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded">Editar</button>
+                    <button class="mr-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded"><a href="{{route('noticias.edit', $noticia->id)}}">Editar</a></button>
                     <form action="{{ route('noticias.destroy', $noticia->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
