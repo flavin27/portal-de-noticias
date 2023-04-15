@@ -55,6 +55,14 @@ class NewsController extends Controller
         $noticia->save();
         return redirect('noticias')->with('success', 'Noticia editada');
     }
+    public function search(Request $request) {
+        $term = $request->input('term');
+        $resultados = News::where('titulo', 'LIKE', '%' . $term . '%')
+            ->orWhere('conteudo', 'LIKE', '%' . $term . '%')
+            ->orWhere('username', 'LIKE', '%' . $term . '%')
+            ->get();
+        return view('noticias.search')->with('resultados', $resultados);
+    }
     
     
 }

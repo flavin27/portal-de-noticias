@@ -22,6 +22,26 @@
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             </button>
+            <div class="w-full max-w-sm mx-auto">
+                <form class="relative" method="GET" action="{{route('noticias.search')}}">
+                    @csrf
+                    <input
+                    class="w-full h-12 px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    type="text"
+                    placeholder="Pesquisar" name="term"
+                    />
+                    <button
+                        class="absolute inset-y-0 right-0 flex items-center justify-center w-12 bg-blue-500 text-white rounded-md"
+                        type="submit"
+                    >
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M15.828 14.586l4.242 4.243-1.414 1.414-4.242-4.243A7.946 7.946 0 0 1 8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8a7.946 7.946 0 0 1-1.172 4.414zM8 14c3.309 0 6-2.691 6-6s-2.691-6-6-6-6 2.691-6 6 2.691 6 6 6z"
+                        />
+                        </svg>
+                    </button>
+                </form>
+            </div>
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
