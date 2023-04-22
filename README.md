@@ -2,10 +2,10 @@
 
 ## Visão Geral
 
-O usuário deve ser capaz de:
- -Criar, vizualizar, atualizar e deletar notícias.
- -Receber uma mensagem de resposta a cada operação realizada
- -Pesquisar por qualquer termo que tenha qualquer relação com a notícia, seja ele o autor, título e até contúdo.
+O usuário deve ser capaz de: <br>
+ -Criar, vizualizar, atualizar e deletar notícias. <br>
+ -Receber uma mensagem de resposta a cada operação realizada. <br>
+ -Pesquisar por qualquer termo que tenha qualquer relação com a notícia, seja ele o autor, título e até contúdo.<br>
 
 O projeto foi inspirado a partir de um teste técnico para back-end php retirado do seguinte vídeo:
 https://www.youtube.com/watch?v=Fss8_UR8CPg
@@ -29,7 +29,7 @@ composer install
 
 ## Rodando o servidor
 
-:bulb: After all the dependencies have been installed, you just need to run the server with the following command:
+:bulb: Depois de ter tudo instalado, basta rodar os seguintes comandos: command:
 
 ```
 npm run dev
