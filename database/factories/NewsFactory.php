@@ -20,7 +20,7 @@ class NewsFactory extends Factory
     {
         return [
             'titulo' => $this->faker->sentence,
-            'conteudo' => $this->faker->paragraph,
+            'conteudo' => $this->faker->text($maxNbChars = 220),
             'username' => User::factory(),
         ];
     }
